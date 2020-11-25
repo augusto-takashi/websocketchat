@@ -149,13 +149,13 @@ class Server:
         
         if client in self.connections:
             self.connections.remove(client)
-        print(f"Client {client.name} disconnected. Remaining {nconnections} active.")
+        print(f"Client {client.name} disconnected. Remaining {self.nconnections} active.")
 
 
     async def send_all(self, origin, msg):
         
         ''' Checks if the current client is the author of the
-        message and if all others still connected'''
+        message and if all others still connected, then sends msg'''
 
         print("Sending all")
         for client in self.connections:
