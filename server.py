@@ -38,6 +38,7 @@ class Client:
 
         try:
             await self.send("Identify yourself with /name YourName")
+            await self.send("/commands to show all comands")
             while True:
                 msg = await self.receive()
                 if msg:
@@ -72,6 +73,10 @@ class Client:
                 await self.change_nickname(commands)
             elif command == "private":
                 await self.private_to(commands)
+            elif command == "commands":
+                await self.send("/name YourName to change your name")
+                await self.send("/time to show current time")
+                await self.send("/private Destination Message to send a private message")
             else:
                 await self.send("Unknown command")
         else:
@@ -162,6 +167,7 @@ class Server:
             if origin != client and client.connected:
                 print(f"[Sending] {origin.name} >> {client.name}: {msg}")
                 await client.send(f"[ALL] {origin.name} >> {msg}")
+                
 
 
     async def send_to_destination(self, origin, msg, destination):
