@@ -1,4 +1,4 @@
-#webscoketchat
+Webscoketchat
 
 Websocket and Asyncio based chat.
 
