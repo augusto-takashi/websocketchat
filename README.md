@@ -1,6 +1,6 @@
-Webscoketchat
+# Webscoket Chat チャット
 
-Websocket and Asyncio based chat.
+Websocket, Asyncio and Svelte based chat.
 
 Subject: Industrial Network
 
